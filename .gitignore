@@ -8,3 +8,8 @@ atom.symlink/storage
 atom.symlink/themes
 
 git/gitconfig.local.symlink
+
+# OSX
+*.DS_Store
+.AppleDouble
+.LSOverride
