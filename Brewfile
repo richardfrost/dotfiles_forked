@@ -3,37 +3,40 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 
 brew 'ack'
+brew 'ansible'
+brew 'autoconf'
+brew 'bash-git-prompt'
 brew 'coreutils'
-brew 'go'
+brew 'gdm'
+brew 'gnupg'
 brew 'grc'
-brew 'imagemagick'
 brew 'jp2a'
 brew 'libcaca', args: ['with-imlib2']
 brew 'libgit2'
+brew 'libyaml'
 brew 'openssl'
-brew 'node'
-brew 'readline'
+brew 'p7zip'
+brew 'pcre'
+brew 'pkg-config'
 brew 'postgresql'
-brew 'ruby-build'
 brew 'rbenv'
+brew 'readline'
 brew 'roundup'
+brew 'ruby-build'
 brew 'spaceman-diff'
-brew 'spark'
+brew 'tree'
 brew 'unrar'
 brew 'wget'
 brew 'youtube-dl'
+brew 'zsh'
 
-cask '1password'
-cask 'adium'
-cask 'atom'
-cask 'firefox'
-cask 'garmin-express'
-cask 'google-chrome'
-cask 'handbrake'
-cask 'mapbox-studio'
-cask 'seashore'
-cask 'slack'
-cask 'steam'
-cask 'transmission'
-cask 'tunnelbear'
-cask 'vlc'
+cask 'atom'            # Text editor
+cask 'firefox'         # Web browser
+cask 'google-chrome'   # Web browser
+cask 'handbrake'       # Video encoder
+cask 'iterm2'          # Terminal replacement
+cask 'karabiner'       # Key modification tool
+cask 'scroll-reverser' # Alternate scrolling per input device
+cask 'slack'           # Instant messenger
+cask 'steam'           # Game distribution platform
+cask 'vlc'             # Media player
