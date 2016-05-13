@@ -1,0 +1,74 @@
+#============================
+# Aliases
+#============================
+# alias iv="cd vagrant-boxes/icinga-vagrant/icinga2x; vagrant ssh"
+
+# alias fsa="/Users/erikanderson/bin/high_speed_testing"
+# alias fpo="/Users/erikanderson/bin/high_speed_testing_po"
+# alias fsd="/Users/erikanderson/bin/high_speed_testing_sd"
+# alias fse="/Users/erikanderson/bin/high_speed_testing_se"
+
+# Git
+function current_branch { git symbolic-ref --short HEAD; }
+alias cb="current_branch"
+alias gs="git status"
+alias gb="git branch"
+alias gp="git pull"
+alias gcob="git checkout -b"
+alias gco="git checkout"
+alias gcom="git checkout master"
+alias gpo="git pull origin"
+alias gpom="git pull origin master"
+alias gd="git diff"
+alias gc="git commit -v"
+alias ga="git add"
+alias gadd="git add ."
+alias gr="git reset"
+alias gpusho="git push origin"
+
+# System
+alias cleardns="sudo killall -HUP mDNSResponder"
+
+#============================
+# MX Specific
+#============================
+alias up="bin/up"
+alias down="bin/down"
+alias sc="bin/syntaxcheck"
+
+alias ssht="echo ssh -TL 127.0.0.1:9200:127.0.0.1:9200 sa-sand-logmill1"
+alias pts="echo 'sudo puppet agent —enable; sudo puppet agent —test —environment=branch; sudo puppet agent —disable testing_initials'"
+
+# Deployment
+alias pushall="git push origin master:sa-sand master:po-misc master:sc-prod master:sd-prod master:sd-corp master:se-prod"
+alias pushsp="git push origin master:sa-sand master:po-misc"
+alias dsa="./bin/deploy --limit=sa-sand-puppetmaster1"
+alias dpo="./bin/deploy --limit=po-misc-puppetmaster1"
+alias dsp="./bin/deploy --limit=sa-sand-puppetmaster1,po-misc-puppetmaster1"
+alias dsc="./bin/deploy --limit=sc-prod-puppetmaster1"
+alias dsd="./bin/deploy --limit=sd-prod-puppetmaster1"
+alias dsdc="./bin/deploy --limit=sd-corp-puppetmaster1"
+alias dse="./bin/deploy --limit=se-prod-puppetmaster1"
+alias dsei="./bin/deploy --limit=se-int-puppetmaster1"
+alias daa="./bin/deploy"
+
+alias irbl="irb -I . -r"
+
+alias usa="~/local/vault_unseal.sh sa-sand"
+alias upo="~/local/vault_unseal.sh po-qa"
+alias usd="~/local/vault_unseal.sh sd-corp"
+
+alias ssha="ssh-add && ssh-add ~/.ssh/provisioner_rsa"
+
+# System
+alias dmesgw="watch -n 0.1 'dmesg | tail -n $((LINES-6))'"
+alias readlink=greadlink
+
+#============================
+# Richard's Aliases
+#============================
+# Applications/Misc
+alias a.="atom ."
+alias e.="open ."
+alias zsh="exec zsh -l"
+alias bash="exec bash -l"
