@@ -22,6 +22,12 @@
       "text.git-commit"
       "text.html.basic"
     ]
+  "sync-settings":
+    _analyticsUserId: "9c248b53-73d5-4f56-99d3-315e1049be8e"
+    _lastBackupHash: "911b681c438047c2107cba0fc290c49dbdc489d9"
+    analytics: false
+    gistId: "c4336c419d6cefdee697878f5f829bde"
+    personalAccessToken: "5ff100aad737436e0c22a94b6bdd40b99945fcfa"
   tabs:
     addNewTabsAtEnd: true
     enableVcsColoring: true
