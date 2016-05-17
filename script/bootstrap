@@ -49,6 +49,13 @@ setup_gitconfig () {
   fi
 }
 
+install_ohmyzsh () {
+  info 'installing ohmyzsh'
+  if [ ! -d "$HOME/.ohmyzsh" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  fi
+  success "ohmyzsh installed"
+}
 
 link_file () {
   local src=$1 dst=$2
@@ -137,16 +144,11 @@ install_dotfiles () {
   done
 }
 
-install_ohmyzsh () {
-  info 'installing ohmyzsh'
-  if [ ! -d "$HOME/.ohmyzsh" ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  fi
-}
+
 
 setup_gitconfig
-install_dotfiles
 install_ohmyzsh
+install_dotfiles
 
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]
