@@ -1,17 +1,14 @@
 export PS1="\h \W \$ "
 export RBENV_ROOT=/usr/local/var/rbenv
 export HISTTIMEFORMAT="%s "
+export HISTCONTROL=ignoredups
 
 if [ "$(uname -s)" == "Darwin" ]
 then
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
-
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \ "$(history 1)" >> ~/.bash_permanent_history'
-
-alias ll="ls -al"
-alias lr="ls -ltrh"
 
 #============================
 # Functions
