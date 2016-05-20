@@ -1,13 +1,6 @@
 #============================
 # Aliases
 #============================
-# alias iv="cd vagrant-boxes/icinga-vagrant/icinga2x; vagrant ssh"
-
-# alias fsa="/Users/erikanderson/bin/high_speed_testing"
-# alias fpo="/Users/erikanderson/bin/high_speed_testing_po"
-# alias fsd="/Users/erikanderson/bin/high_speed_testing_sd"
-# alias fse="/Users/erikanderson/bin/high_speed_testing_se"
-
 # Git
 function current_branch { git symbolic-ref --short HEAD; }
 alias cb="current_branch"
