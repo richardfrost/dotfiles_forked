@@ -25,6 +25,7 @@ alias ga="git add"
 alias gadd="git add ."
 alias gr="git reset"
 alias gpusho="git push origin"
+alias gpubb="git-publish-branch"
 
 # System
 alias cleardns="sudo killall -HUP mDNSResponder"
