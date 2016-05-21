@@ -19,6 +19,7 @@ alias gadd="git add ."
 alias gr="git reset"
 alias gpusho="git push origin"
 alias gpubb="git-publish-branch"
+alias git_protect_master="ln -s $HOME/.dotfiles/git/hooks/pre-commit ./.git/hooks"
 
 # System
 alias cleardns="sudo killall -HUP mDNSResponder"
