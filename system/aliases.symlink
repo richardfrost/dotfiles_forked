@@ -64,6 +64,10 @@ alias readlink=greadlink
 #============================
 # Applications/Misc
 alias a.="atom ."
-alias e.="open ."
+alias e.="open ."         # Mac OSX
 alias zsh="exec zsh -l"
 alias bash="exec bash -l"
+
+# Generate Password
+# alias pwgen="date | md5"
+function pwgen { if [[ $1 ]]; then length=$1 else length=32; fi ; date +%s | sha256sum | base64 | head -c $length ; echo }
