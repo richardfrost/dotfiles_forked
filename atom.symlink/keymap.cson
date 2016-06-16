@@ -35,8 +35,6 @@
   'ctrl-d': 'find-and-replace:select-next'
   'ctrl-delete': 'editor:delete-to-end-of-word'
   'ctrl-shift-delete': 'editor:delete-to-end-of-line'
-  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
-  'ctrl-shift-P': 'command-palette:toggle'
   'f9': 'sort-lines:sort' # Need to install sort-lines: apm install sort-lines
   # Cycle through tabs in display order instead of MRU
   # https://github.com/atom/atom/issues/11035#issuecomment-209875101
@@ -49,6 +47,8 @@
 'atom-workspace atom-text-editor:not([mini])':
   'alt-shift-up': 'editor:move-line-up'
   'alt-shift-down': 'editor:move-line-down'
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+  'ctrl-shift-P': 'command-palette:toggle'
 
 '.platform-darwin atom-text-editor':
   'ctrl-cmd-a': 'tree-view:reveal-active-file'
