@@ -71,4 +71,4 @@ alias pub="cat $HOME/.ssh/id_rsa.pub "
 
 # Generate Password
 # alias pwgen="date | md5"
-function pwgen { if [[ $1 ]]; then length=$1 else length=32; fi ; date +%s | sha256sum | base64 | head -c $length ; echo }
+function pwgen { if [[ $1 ]]; then length=$1; else length=32; fi; date +%s | sha256sum | base64 | head -c $length; echo; }
