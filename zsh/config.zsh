@@ -11,6 +11,9 @@ fpath=($DOTFILES/functions $fpath)
 
 autoload -U $DOTFILES/functions/*(:t)
 
+# History
+HISTCONTROL=ignoredups:ignorespace
+HISTTIMEFORMAT="%s "
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000

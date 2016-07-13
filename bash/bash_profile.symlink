@@ -2,14 +2,14 @@
 export PS1='\[\033[1;42m\]\h\[\033[0m\] \W \$ '
 export RBENV_ROOT=/usr/local/var/rbenv
 export HISTTIMEFORMAT="%s "
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoredups:ignorespace
 
 if [ "$(uname -s)" == "Darwin" ]
 then
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \ "$(history 1)" >> ~/.bash_permanent_history'
+# PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \ "$(history 1)" >> ~/.bash_permanent_history'
 
 #============================
 # Functions
