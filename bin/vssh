@@ -1,4 +1,5 @@
 #!/bin/bash
+# Quickly connect to a vagrant node through ssh
 dir=$(pwd)
 ssh_config="$dir/.ssh_config"
 vagrant_dir="$dir/.vagrant"
