@@ -32,8 +32,6 @@ $cli set private.richard_lock 1
 /bin/echo -n .
 $cli set remap.app_finder_brightness_up_to_return 1
 /bin/echo -n .
-$cli set remap.app_finder_f2_to_return 1
-/bin/echo -n .
 $cli set remap.app_finder_forwarddelete2commandLdelete 1
 /bin/echo -n .
 $cli set remap.app_finder_switch_new_folder_window 1
