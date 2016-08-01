@@ -10,6 +10,7 @@ brew 'coreutils'
 brew 'gdm'
 brew 'gnupg'
 brew 'grc'
+brew 'htop'
 brew 'jp2a'
 brew 'ldns'
 brew 'libcaca', args: ['with-imlib2']
