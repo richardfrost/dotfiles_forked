@@ -12,6 +12,8 @@
       "repositories"
       "tmp"
       "vendor"
+      ".DS_Store"
+      "thumbs.db"
     ]
   "custom-title":
     template: "<% if (fileInProject) { %><%= projectName %> - <%= relativeFilePath %><% } else { %><%= filePath %><% } %>"
@@ -40,5 +42,7 @@
   tabs:
     addNewTabsAtEnd: true
     enableVcsColoring: true
+  "tree-view":
+    hideIgnoredNames: true
   welcome:
     showOnStartup: false
