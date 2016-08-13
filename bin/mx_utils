@@ -7,8 +7,8 @@ require "#{Dir.home}/code/puppet/modules/mx/lib/mx"
 class MXUtils < Thor
   include Thor::Actions
 
-  desc "update_host_completion", "Create/update list of host completions"
-  def update_host_completion
+  desc "hostname_completion", "Create/update list of host completions"
+  def hostname_completion
     list = Array.new
     MX.each_hiera_node do |node|
       list.push(node.hostname)
