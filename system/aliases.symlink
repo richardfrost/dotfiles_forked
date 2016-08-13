@@ -47,6 +47,7 @@ alias dse="./bin/deploy --limit=se-prod-puppetmaster1"
 alias dsei="./bin/deploy --limit=se-int-puppetmaster1"
 alias daa="./bin/deploy"
 
+alias be="bundle exec $*"
 alias irbl="irb -I . -r"
 
 alias usa="~/local/vault_unseal.sh sa-sand"
@@ -67,7 +68,7 @@ alias a.="atom ."
 alias e.="open ."         # Mac OSX
 alias zsh="exec zsh -l"
 alias bash="exec bash -l"
-alias pub="cat $HOME/.ssh/id_rsa.pub "
+alias pub="echo $HOME/.ssh/id_rsa.pub; cat $HOME/.ssh/id_rsa.pub "
 
 # Generate Password
 # alias pwgen="date | md5"
