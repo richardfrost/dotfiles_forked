@@ -37,6 +37,19 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 #============================
+# SSH Autocompletion
+#============================
+# Gather hosts from history and config
+# complete -W "
+#   $(echo $(grep '^\s*ssh ' ~/.bash_history | sort -u | sed 's/^ssh //' | awk '{print $1}'))
+#   $(echo $(history | awk '{print $3 " " $4}' | grep 'ssh ' | awk '{print $2}' | sort -u))
+#   $(sed 's/#.*//;' ~/.ssh/config | awk ' /^Host (.+)$/ {$1 = "";print tolower($0)}')
+# " ssh
+
+# Completion from custom_hosts list: "$HOME/.ssh/custom_hosts"
+[[ -r $HOME/.ssh/custom_hosts ]] && complete -W "$(cat $HOME/.ssh/custom_hosts))" ssh sshmux
+
+#============================
 # Richard's Aliases
 #============================
 # Aliases
