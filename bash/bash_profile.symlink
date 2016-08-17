@@ -47,7 +47,7 @@ fi
 # " ssh
 
 # Completion from custom_hosts list: "$HOME/.ssh/custom_hosts"
-[[ -r $HOME/.ssh/custom_hosts ]] && complete -W "$(cat $HOME/.ssh/custom_hosts))" ssh sshmux
+[[ -r $HOME/.ssh/custom_hosts ]] && complete -W "$(cat $HOME/.ssh/custom_hosts))" ssh scp sftp sshmux
 
 #============================
 # Richard's Aliases
