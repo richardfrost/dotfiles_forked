@@ -55,6 +55,7 @@ fi
 # Aliases
 alias aliases="less ~/.bash_profile"
 alias reload_aliases="source ~/.bash_profile"
+alias c="cd ~/code $*"
 
 # Import common aliases
 . ~/.aliases
