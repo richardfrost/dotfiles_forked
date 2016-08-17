@@ -139,3 +139,6 @@ source $ZSH/oh-my-zsh.sh
 
 # 'rbenv init -'
 eval "$(rbenv init -)"
+
+# Enable host autocomplete for sshmux
+compdef sshmux=ssh

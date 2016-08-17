@@ -6,16 +6,18 @@ zstyle ':completion:*' insert-tab pending
 
 ###
 # Hostname completion for ssh commands
-$h=()
+$hosts=()
 
 # Compltion from history
-# h=($(echo $(history | awk '{print $2 " " $3}' | grep 'ssh ' | awk '{print $2}' | sort -u)))
+h=($(echo $(history | awk '{print $2 " " $3}' | grep 'ssh ' | awk '{print $2}' | sort -u)))
 
 # Completion from custom_hosts list: "$HOME/.ssh/custom_hosts"
-[[ -r $HOME/.ssh/custom_hosts ]] && h=($h $(cat $HOME/.ssh/custom_hosts))
+[[ -r $HOME/.ssh/custom_hosts ]] && hosts=($hosts $(cat $HOME/.ssh/custom_hosts))
 
-if [[ $#h -gt 0 ]]; then
-  zstyle ':completion:*:ssh:*' hosts $h
+if [[ $#hosts -gt 0 ]]; then
+  # This forces host completion to read from variable $hosts
+  zstyle -e ':completion:*' hosts 'reply=($hosts)'
+  # zstyle ':completion:*:(ssh|scp|sftp):*' hosts $hosts
 fi
 
 ###
