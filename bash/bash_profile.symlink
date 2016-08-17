@@ -55,7 +55,13 @@ fi
 # Aliases
 alias aliases="less ~/.bash_profile"
 alias reload_aliases="source ~/.bash_profile"
-alias c="cd ~/code $*"
+
+# Go to code folder
+export PROJECTS=~/code
+code_folder() {
+  cd "$PROJECTS/$1"
+}
+alias c=code_folder
 
 # Import common aliases
 . ~/.aliases
