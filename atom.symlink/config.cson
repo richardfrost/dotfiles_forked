@@ -25,6 +25,10 @@
   "exception-reporting":
     userId: "3a02b761-61a3-b87d-8e92-617d38efeb84"
   "file-icons": {}
+  minimap:
+    plugins:
+      "split-diff": true
+      "split-diffDecorationsZIndex": 0
   pigments:
     markerType: "square-dot"
   "spell-check":
