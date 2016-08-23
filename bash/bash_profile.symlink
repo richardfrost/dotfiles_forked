@@ -58,10 +58,16 @@ alias reload_aliases="source ~/.bash_profile"
 
 # Go to code folder
 export PROJECTS=~/code
-code_folder() {
+c() {
   cd "$PROJECTS/$1"
 }
-alias c=code_folder
+_c() {
+  local cur opts
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  opts=$(cd "$PROJECTS"; ls -d */ | sed 's|/./||')
+  COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+}
+complete -F _c c
 
 # Import common aliases
 . ~/.aliases

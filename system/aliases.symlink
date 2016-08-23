@@ -63,7 +63,7 @@ alias readlink=greadlink
 #============================
 # Thor Wrappers
 #============================
-function provision_vms { ~/code/puppet/bin/csv_to_provision provision --site=$1 --env=$2 --rebuild }
+function provision_vms { ~/code/puppet/bin/csv_to_provision provision --site=$1 --env=$2 --rebuild; }
 
 #============================
 # Richard's Aliases
