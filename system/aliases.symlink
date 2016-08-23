@@ -61,6 +61,11 @@ alias dmesgw="watch -n 0.1 'dmesg | tail -n $((LINES-6))'"
 alias readlink=greadlink
 
 #============================
+# Thor Wrappers
+#============================
+function lookup_vms { ~/code/puppet/bin/csv_to_provision --site=$1 --env=$2 }
+
+#============================
 # Richard's Aliases
 #============================
 # Applications/Misc
