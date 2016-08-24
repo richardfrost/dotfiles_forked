@@ -1,6 +1,14 @@
 "*":
   "activate-power-mode":
     autoToggle: false
+  "atom-material-ui":
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui:
+      panelContrast: true
+      panelShadows: true
   core:
     disabledPackages: [
       "sync-settings"
@@ -14,6 +22,10 @@
       "vendor"
       ".DS_Store"
       "thumbs.db"
+    ]
+    themes: [
+      "atom-material-ui"
+      "one-dark-syntax"
     ]
   "custom-title":
     template: "<% if (fileInProject) { %><%= projectName %> - <%= relativeFilePath %><% } else { %><%= filePath %><% } %>"
