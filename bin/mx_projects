@@ -3,10 +3,11 @@
 # Update existing folders?
 
 scriptname=$0   # $0 is the name of the program
-Root="$HOME/code"
-# Apps=(abacus alfred amigo ballista batcave bob bullseye bunyan dispatch dunaway firefly grunt hulk longbow monty newman persona ranger relay sherlock synchronicity wormhole)
-Apps=(abacus batcave alfred relay)
-App=''
+root="$HOME/code"
+# apps=(abacus alfred amigo ballista batcave bob bullseye bunyan dispatch dunaway firefly grunt hulk longbow monty newman persona ranger relay sherlock synchronicity wormhole)
+apps=(abacus batcave alfred relay)
+orgs=(dev IT-Infrastructure change-control)
+app=''
 
 # -f Force removing of directory and re-clone
 # '-a app' run on just a single app
@@ -28,8 +29,7 @@ EOF
 # Get arguments
 while getopts ":a:fhs" opt; do
    case $opt in
-
-   a )  Apps=($OPTARG) ;;
+   a )  apps=($OPTARG) ;;
    f )  FORCE=true ;;
    s )  SKIP=true ;;
    h )  usage ;;
@@ -48,7 +48,7 @@ fix_rbenv() {
   # brew install rbenv
   # rbenv install 2.3.1
   # sudo chown -R richardfrost ~/.rbenv
-  cd "$Root/$App"
+  cd "$root/$app"
   rbenv local
   gem install bundler
   rbenv rehash
@@ -56,32 +56,35 @@ fix_rbenv() {
 }
 
 clone_app_repo() {
-  if [ -d "$Root" ]; then
-    cd "$Root"
-    if [ ! -d "$App" ] || $1; then
-      rm -rf "$Root/$App"
-      git clone "git@git.moneydesktop.com:dev/${App}.git"
+  if [ -d "$root" ]; then
+    cd "$root"
+    if [ ! -d "$app" ] || $1; then
+      # rm -rf "$root/$app"
+      for i in "${orgs[@]}"; do
+        git clone "git@git.moneydesktop.com:${i}/${app}.git"
+        if [ $? == 0 ]; then break; fi
+      done
     fi
   else
-    echo "Code root dir doesn't exist: $Root"
+    echo "Code root dir doesn't exist: $root"
     return 1
   fi
 }
 
 get_stable() {
-  if [ -d "$Root/$App" ]; then
-    cd "$Root/$App"
+  if [ -d "$root/$app" ]; then
+    cd "$root/$app"
     git checkout stable
     git pull
   else
-    echo "Can't get stable: $Root/$App"
+    echo "Can't get stable: $root/$app"
     return 1
   fi
 }
 
 update_ruby_and_gems() {
-  if [ -d "$Root/$App" ]; then
-    cd "$Root/$App"
+  if [ -d "$root/$app" ]; then
+    cd "$root/$app"
     rbenv install -s
     bundler_installed=$(gem list bundler -i)
     if [ $bundler_installed == 'false' ]; then
@@ -90,15 +93,15 @@ update_ruby_and_gems() {
     rbenv rehash
     bundle
   else
-    echo "Can't update gems: $Root/$App"
+    echo "Can't update gems: $root/$app"
     return 1
   fi
 }
 
-for App in "${Apps[@]}"
+for app in "${apps[@]}"
 do
-  if [ "$App" ]; then
-    printf "\n\033[0;34m[${App}]\033[0m\n"
+  if [ "$app" ]; then
+    printf "\n\033[0;34m[${app}]\033[0m\n"
     clone_app_repo $FORCE && get_stable && update_ruby_and_gems
 
     # sed -i -e "s/gem \"atlas\"/gem \"atlas\", :git => 'git@git\.moneydesktop\.com:dev\/atlas\.git', :branch => 'nobroadcast'/g" Gemfile
@@ -108,4 +111,4 @@ do
     # git push origin se-prod
   fi
 done
-cd $Root
+cd $root
