@@ -1,36 +1,35 @@
 #!/bin/bash
 
-# Update existing folders?
-
-scriptname=$0   # $0 is the name of the program
-root="$HOME/code"
-apps=(abacus alfred amigo ballista batcave bob bullseye bunyan dispatch dunaway firefly grunt hulk longbow monty newman persona ranger relay sherlock synchronicity wormhole)
+scriptname=$0     # $0 is the name of the program
+root="$HOME/code" # Update this to point to your code directory
+all_apps=(abacus alfred amigo ballista batcave bob bullseye bunyan dispatch dunaway firefly grunt hulk longbow monty newman persona ranger relay sherlock synchronicity wormhole)
 orgs=(dev IT-Infrastructure change-control)
-force=false
-skip=false
+bundle=false
 update=false
 
 # Print usage help
 function usage() {
    cat <<EOF
-Usage: $scriptname [-a app_name] [-f] [-h]
-   -a   Run for a single app
-   -f   Force (delete and re-create)
-   -h   displays basic help
+Usage: $scriptname [-a] [-b] [-s app1] [-s app2] [-h]
+  -a  All apps
+  -b  Run bundle after cloning/updating
+  -s  Single app (can specify multiple times)
+  -h  Displays basic help
 EOF
    exit 0
 }
 
 # Get arguments
-while getopts ":a:fhs" opt; do
+while getopts "s:abh" opt; do
    case $opt in
-   a )  apps=($OPTARG) ;;
-   f )  force=true ;;
-   s )  skip=true ;;
+   a )  apps=( "${all_apps[@]}" ) ;;
+   b )  bundle=true ;;
+   s )  apps+=( "$OPTARG" ) ;;
    h )  usage ;;
    \?)  usage ;;
    esac
 done
+if [ -z "$apps" ]; then usage; fi
 
 shift $(($OPTIND - 1))
 
@@ -51,11 +50,12 @@ fix_rbenv() {
 }
 
 clone_app_repo() {
-  force=$1
   if [ -d "$root" ]; then
     cd "$root"
-    if [ ! -d "$app" ] || $force; then
-      rm -rf "$root/$app"
+    if [ -d "$app" ]; then
+      cd "$app"
+      git remote update
+    else
       for i in "${orgs[@]}"; do
         git clone "git@git.moneydesktop.com:${i}/${app}.git"
         if [ $? == 0 ]; then break; fi
@@ -100,13 +100,8 @@ for app in "${apps[@]}"
 do
   if [ "$app" ]; then
     printf "\n\033[0;34m[${app}]\033[0m\n"
-    clone_app_repo $force && get_stable && update_ruby_and_gems
-
-    # sed -i -e "s/gem \"atlas\"/gem \"atlas\", :git => 'git@git\.moneydesktop\.com:dev\/atlas\.git', :branch => 'nobroadcast'/g" Gemfile
-    # bundle update protobuf
-    # git reset --hard
-    # git commit -m "Use atlas nobroadcast branch"
-    # git push origin se-prod
+    clone_app_repo && get_stable
+    if [ $bundle == true ] && [ $? == 0 ]; then update_ruby_and_gems; fi
   fi
 done
 cd $root
