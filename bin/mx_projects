@@ -2,7 +2,8 @@
 
 scriptname=$0     # $0 is the name of the program
 root="$HOME/code" # Update this to point to your code directory
-all_apps=(abacus alfred amigo ballista batcave bob bullseye bunyan dispatch dunaway firefly grunt hulk longbow monty newman persona ranger relay sherlock synchronicity wormhole)
+dev_apps=(abacus alfred amigo atlas ballista batcave bob bullseye bunyan datastream dispatch dunaway firefly grunt hulk longbow monty newman persona raja ranger relay sherlock synchronicity wormhole)
+it_apps=(bind dev_web_proxy nurse public-dns) # leonard puppet
 orgs=(dev IT-Infrastructure change-control)
 bundle=false
 update=false
@@ -22,7 +23,7 @@ EOF
 # Get arguments
 while getopts "s:abh" opt; do
    case $opt in
-   a )  apps=( "${all_apps[@]}" ) ;;
+   a )  apps=( "${dev_apps[@]}" "${it_apps[@]}" ) ;;
    b )  bundle=true ;;
    s )  apps+=( "$OPTARG" ) ;;
    h )  usage ;;
