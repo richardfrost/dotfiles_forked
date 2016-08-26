@@ -12,6 +12,7 @@ brew 'gnupg'
 brew 'grc'
 brew 'htop'
 brew 'jp2a'
+brew 'ncdu'
 brew 'ldns'
 brew 'libcaca', args: ['with-imlib2']
 brew 'libgit2'
