@@ -84,16 +84,18 @@ get_stable() {
 
 update_ruby_and_gems() {
   if [ -d "$root/$app" ]; then
-    cd "$root/$app"
-    rbenv install -s
-    bundler_installed=$(gem list bundler -i)
-    if [ $bundler_installed == 'false' ]; then
-      gem install bundler -N
+    if [ -f "$root/$app/Gemfile" ]; then
+      cd "$root/$app"
+      rbenv install -s
+      bundler_installed=$(gem list bundler -i)
+      if [ $bundler_installed == 'false' ]; then
+        gem install bundler -N
+      fi
+      rbenv rehash
+      bundle
     fi
-    rbenv rehash
-    bundle
   else
-    echo "Can't update gems: $root/$app"
+    echo "Can't update gems; directory not found: $root/$app"
     return 1
   fi
 }
