@@ -1,12 +1,10 @@
 #!/bin/bash
-
 scriptname=$0     # $0 is the name of the program
 root="$HOME/code" # Update this to point to your code directory
 dev_apps=(abacus alfred amigo atlas ballista batcave bob bullseye bunyan datastream dispatch dunaway firefly grunt hulk longbow monty newman persona raja ranger relay sherlock synchronicity wormhole)
 it_apps=(bind dev_web_proxy nurse public-dns) # leonard puppet
 orgs=(dev IT-Infrastructure change-control)
 bundle=false
-update=false
 
 # Print usage help
 function usage() {
@@ -30,9 +28,7 @@ while getopts "s:abh" opt; do
    \?)  usage ;;
    esac
 done
-if [ -z "$apps" ]; then usage; fi
-
-shift $(($OPTIND - 1))
+if [ ${#apps[@]} == 0 ]; then usage; fi
 
 fix_rbenv() {
   # https://stackoverflow.com/questions/17550903/why-do-i-get-a-permission-denied-error-while-installing-a-gem
@@ -43,7 +39,7 @@ fix_rbenv() {
   # brew install rbenv
   # rbenv install 2.3.1
   # sudo chown -R richardfrost ~/.rbenv
-  cd "$root/$app"
+  cd "$root/$app" || exit
   rbenv local
   gem install bundler
   rbenv rehash
@@ -52,9 +48,9 @@ fix_rbenv() {
 
 clone_app_repo() {
   if [ -d "$root" ]; then
-    cd "$root"
+    cd "$root" || exit
     if [ -d "$app" ]; then
-      cd "$app"
+      cd "$app" || exit
       git remote update
     else
       for i in "${orgs[@]}"; do
@@ -70,7 +66,7 @@ clone_app_repo() {
 
 get_stable() {
   if [ -d "$root/$app" ]; then
-    cd "$root/$app"
+    cd "$root/$app" || exit
     git checkout stable
     git pull
   else
@@ -82,10 +78,10 @@ get_stable() {
 update_ruby_and_gems() {
   if [ -d "$root/$app" ]; then
     if [ -f "$root/$app/Gemfile" ]; then
-      cd "$root/$app"
+      cd "$root/$app" || exit
       rbenv install -s
       bundler_installed=$(gem list bundler -i)
-      if [ $bundler_installed == 'false' ]; then
+      if [ "$bundler_installed" == 'false' ]; then
         gem install bundler -N
       fi
       rbenv rehash
@@ -100,9 +96,9 @@ update_ruby_and_gems() {
 for app in "${apps[@]}"
 do
   if [ "$app" ]; then
-    printf "\n\033[0;34m[${app}]\033[0m\n"
+    printf "\n\033[0;34m[ %s ]\033[0m\n" "$app"
     clone_app_repo && get_stable
     if [ $bundle == true ] && [ $? == 0 ]; then update_ruby_and_gems; fi
   fi
 done
-cd $root
+cd "$root" || exit
