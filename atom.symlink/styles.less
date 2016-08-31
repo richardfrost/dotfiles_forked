@@ -35,3 +35,11 @@ atom-text-editor::shadow .wrap-guide {
   opacity: .05; //barely visible
   background-color: cyan;
 }
+
+// Make the invisibles less visible
+atom-text-editor::shadow {
+  .invisible-character {
+    color: cyan;
+    opacity: 0.15;
+  }
+}
