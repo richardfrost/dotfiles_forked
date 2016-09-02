@@ -43,7 +43,7 @@
   'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-shift-tab ^ctrl': 'unset!'
   # End Cycle through tabs
-  'ctrl-i': 'window:toggle-invisibles'
+  'ctrl-shift-i': 'window:toggle-invisibles'
 
 'atom-workspace atom-text-editor:not([mini])':
   'alt-shift-up': 'editor:move-line-up'
