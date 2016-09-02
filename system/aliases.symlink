@@ -74,6 +74,7 @@ function provision_vms { ~/code/puppet/bin/csv_to_provision provision --site="$1
 #============================
 # Applications/Misc
 alias a.="atom ."
+alias dbin='ls $HOME/.dotfiles/bin'
 alias dotfiles="cd ~/.dotfiles"
 alias e.="open ."         # Mac OSX
 alias pub='echo $HOME/.ssh/id_rsa.pub; cat $HOME/.ssh/id_rsa.pub'
