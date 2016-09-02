@@ -3,6 +3,7 @@
 #============================
 # Git
 function current_branch { git symbolic-ref --short HEAD; }
+alias g='git'
 alias cb="current_branch"
 alias gs="git status"
 alias gb="git branch"
@@ -14,12 +15,15 @@ alias gpo="git pull origin"
 alias gpom="git pull origin master"
 alias gd="git diff"
 alias gc="git commit -v"
+alias gcn='git commit -v --no-verify'
 alias ga="git add"
 alias gadd="git add ."
 alias gr="git reset"
-alias gpusho="git push origin"
+alias gpusho='git push origin'
+alias gpushb='git push origin $(current_branch)'
+alias gpushu='git push -u origin $(current_branch)'
 alias gpubb="git-publish-branch"
-alias git_protect_master="ln -s $HOME/.dotfiles/git/hooks/pre-commit ./.git/hooks"
+alias git_protect_master='ln -s $HOME/.dotfiles/git/hooks/pre-commit ./.git/hooks'
 
 # System
 alias cleardns="sudo killall -HUP mDNSResponder"
@@ -47,7 +51,7 @@ alias dse="./bin/deploy --limit=se-prod-puppetmaster1"
 alias dsei="./bin/deploy --limit=se-int-puppetmaster1"
 alias daa="./bin/deploy"
 
-alias be="bundle exec $*"
+alias be='bundle exec'
 alias irbl="irb -I . -r"
 
 alias usa="~/local/vault_unseal.sh sa-sand"
@@ -57,13 +61,13 @@ alias usd="~/local/vault_unseal.sh sd-corp"
 alias ssha="ssh-add && ssh-add ~/.ssh/provisioner_rsa"
 
 # System
-alias dmesgw="watch -n 0.1 'dmesg | tail -n $((LINES-6))'"
+alias dmesgw='watch -n 0.1 "dmesg | tail -n $((LINES-6))"'
 alias readlink=greadlink
 
 #============================
 # Thor Wrappers
 #============================
-function provision_vms { ~/code/puppet/bin/csv_to_provision provision --site=$1 --env=$2 --rebuild; }
+function provision_vms { ~/code/puppet/bin/csv_to_provision provision --site="$1" --env="$2" --rebuild; }
 
 #============================
 # Richard's Aliases
@@ -72,7 +76,7 @@ function provision_vms { ~/code/puppet/bin/csv_to_provision provision --site=$1 
 alias a.="atom ."
 alias dotfiles="cd ~/.dotfiles"
 alias e.="open ."         # Mac OSX
-alias pub="echo $HOME/.ssh/id_rsa.pub; cat $HOME/.ssh/id_rsa.pub "
+alias pub='echo $HOME/.ssh/id_rsa.pub; cat $HOME/.ssh/id_rsa.pub'
 alias bash="exec bash -l"
 alias zsh="exec zsh -l"
 
