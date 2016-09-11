@@ -56,6 +56,7 @@
       "text.git-commit"
       "text.html.basic"
     ]
+  "split-diff": {}
   "sync-settings":
     _analyticsUserId: "9c248b53-73d5-4f56-99d3-315e1049be8e"
     _lastBackupHash: "911b681c438047c2107cba0fc290c49dbdc489d9"

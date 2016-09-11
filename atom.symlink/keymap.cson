@@ -45,6 +45,7 @@
   # End Cycle through tabs
   'ctrl-shift-i': 'window:toggle-invisibles'
 
+
 'atom-workspace atom-text-editor:not([mini])':
   'alt-shift-up': 'editor:move-line-up'
   'alt-shift-down': 'editor:move-line-down'
@@ -62,3 +63,4 @@
   'cmd-shift-3': 'pane-layout:column-3'
   'cmd-shift-4': 'pane-layout:column-4'
   'cmd-shift-5': 'pane-layout:square'
+  'ctrl-\\': 'tree-view:toggle'
