@@ -8,9 +8,9 @@ export DOTFILES=$HOME/.dotfiles
 
 if [ "$(uname -s)" == "Darwin" ]
 then
-  # Set OS X defaults
+  # Set macOS defaults
   echo "› OSX defaults"
-  $DOTFILES/osx/set-defaults.sh
+  $DOTFILES/macos/set-defaults.sh
 
   # Install homebrew
   $DOTFILES/homebrew/install.sh 2>&1
