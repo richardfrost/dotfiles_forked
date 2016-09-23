@@ -1,0 +1,11 @@
+###########################
+# 1.1.4.1
+###########################
+bin\agent.cmd
+config\.history
+config\aliases
+config\ConEmu.xml
+config\startup.bat
+vendor\init.bat
+Add-Cmder.reg
+Remove-Cmder.reg
