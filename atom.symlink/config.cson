@@ -1,6 +1,9 @@
 "*":
   "activate-power-mode":
     autoToggle: false
+  "atom-beautify":
+    general:
+      _analyticsUserId: "89748c97-dd75-4a66-8e03-b6d72619f6b0"
   "atom-material-ui":
     tabs:
       compactTabs: true

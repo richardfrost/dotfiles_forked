@@ -43,11 +43,13 @@
   # End Cycle through tabs
 
 '.platform-darwin':
-  'cmd-shift-1': 'pane-layout:column-1'
-  'cmd-shift-2': 'pane-layout:column-2'
-  'cmd-shift-3': 'pane-layout:column-3'
-  'cmd-shift-4': 'pane-layout:column-4'
-  'cmd-shift-5': 'pane-layout:square'
+  'alt-pageup': 'core:page-up'
+  'alt-pagedown': 'core:page-down'
+  'ctrl-shift-1': 'pane-layout:column-1'
+  'ctrl-shift-2': 'pane-layout:column-2'
+  'ctrl-shift-3': 'pane-layout:column-3'
+  'ctrl-shift-4': 'pane-layout:column-4'
+  'ctrl-shift-5': 'pane-layout:square'
   'cmd-shift-down': 'editor:add-selection-below'
   'cmd-shift-up': 'editor:add-selection-above'
   'cmd-t': 'application:new-file'
