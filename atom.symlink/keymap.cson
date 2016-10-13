@@ -45,8 +45,8 @@
 '.platform-darwin':
   'alt-pageup': 'core:page-up'
   'alt-pagedown': 'core:page-down'
-  'ctrl-shift-1': 'pane-layout:column-1'
-  'ctrl-shift-2': 'pane-layout:column-2'
+  'cmd-!': 'pane-layout:column-1' # alt-shift-1
+  'cmd-@': 'pane-layout:column-2' # alt-shift-2
   'ctrl-shift-3': 'pane-layout:column-3'
   'ctrl-shift-4': 'pane-layout:column-4'
   'ctrl-shift-5': 'pane-layout:square'
@@ -71,9 +71,9 @@
 '.platform-win32, .platform-linux':
   'alt-shift-down': 'editor:add-selection-below'
   'alt-shift-up': 'editor:add-selection-above'
-  'ctrl-shift-1': 'pane-layout:column-1'
-  'ctrl-shift-2': 'pane-layout:column-2'
-  'ctrl-shift-3': 'pane-layout:column-3'
-  'ctrl-shift-4': 'pane-layout:column-4'
-  'ctrl-shift-5': 'pane-layout:square'
+  'alt-shift-1': 'pane-layout:column-1' # default ?
+  'alt-shift-2': 'pane-layout:column-2' # default ?
+  'alt-shift-3': 'pane-layout:column-3' # default ?
+  'alt-shift-4': 'pane-layout:column-4' # default ?
+  'alt-shift-5': 'pane-layout:square' # default ?
   'ctrl-t': 'application:new-file'
