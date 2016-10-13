@@ -24,8 +24,6 @@ $cli set private.chrome_show_downloads 1
 /bin/echo -n .
 $cli set private.chrome_show_history 1
 /bin/echo -n .
-$cli set private.richard_lock 1
-/bin/echo -n .
 $cli set remap.app_finder_f2_to_return 1
 /bin/echo -n .
 $cli set remap.app_finder_forwarddelete2commandLdelete 1
