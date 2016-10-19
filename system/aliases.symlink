@@ -51,14 +51,12 @@ alias dse="./bin/deploy --limit=se-prod-puppetmaster1"
 alias dsei="./bin/deploy --limit=se-int-puppetmaster1"
 alias daa="./bin/deploy"
 
+alias b='bundle'
 alias be='bundle exec'
+alias bx='bundle exec'
 alias irbl="irb -I . -r"
-
-alias usa="~/local/vault_unseal.sh sa-sand"
-alias upo="~/local/vault_unseal.sh po-qa"
-alias usd="~/local/vault_unseal.sh sd-corp"
-
 alias ssha="ssh-add && ssh-add ~/.ssh/provisioner_rsa"
+alias unseal="mx_vault_unseal"
 
 # System
 alias dmesgw='watch -n 0.1 "dmesg | tail -n $((LINES-6))"'
@@ -78,10 +76,11 @@ function provision_vms { ~/code/puppet/bin/csv_to_provision provision --site="$1
 # Richard's Aliases
 #============================
 # Applications/Misc
+alias aliases='cat "$HOME/.aliases"'
 alias a.="atom ."
 alias dbin='ls $HOME/.dotfiles/bin'
 alias dotfiles="cd ~/.dotfiles"
-alias e.="open ."         # Mac OSX
+alias e.="open ." # Mac OSX
 alias pub='echo $HOME/.ssh/id_rsa.pub; cat $HOME/.ssh/id_rsa.pub'
 alias bash="exec bash -l"
 alias zsh="exec zsh -l"
