@@ -16,7 +16,6 @@ brew 'imagemagick'
 brew 'jp2a'
 brew 'jq'
 brew 'ldns'
-brew 'libcaca', args: ['with-imlib2']
 brew 'libgit2'
 brew 'libyaml'
 brew 'ncdu'
@@ -40,7 +39,11 @@ brew 'yarn'
 brew 'youtube-dl'
 brew 'zsh'
 
+cask 'appcleaner'      # Application cleanup
 cask 'atom'            # Text editor
+cask 'bettertouchtool' # Key and gesture customization
+cask 'ccleaner'         # Tempfile cleaner
+cask 'filezilla'       # File transfer
 cask 'firefox'         # Web browser
 cask 'google-chrome'   # Web browser
 cask 'handbrake'       # Video encoder
