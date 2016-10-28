@@ -13,9 +13,6 @@
       panelContrast: true
       panelShadows: true
   core:
-    disabledPackages: [
-      "sync-settings"
-    ]
     ignoredNames: [
       ".bundle"
       ".git"

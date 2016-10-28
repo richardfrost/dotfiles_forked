@@ -8,6 +8,13 @@
 # You can generate a new list based on currently installed
 # packages via atom-package-backup
 
+# Atom Stars allows you to keep track of your favorite packages
+# To star a package:
+#   apm star package-name
+# To star all installed packages:
+#   apm star --installed
+# To install all starred packges:
+#   apm stars --install
 set -e
 
 apm install --packages-file ~/.dotfiles/atom.symlink/packages.txt
