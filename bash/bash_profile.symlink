@@ -58,9 +58,8 @@ alias reload_aliases="source ~/.bash_profile"
 
 # Go to code folder
 export PROJECTS=~/code
-c() {
-  cd "$PROJECTS/$1"
-}
+function c { cd "$PROJECTS/$1"; }
+
 _c() {
   local cur opts
   cur="${COMP_WORDS[COMP_CWORD]}"
