@@ -1,7 +1,7 @@
 #!/bin/bash
 # https://pqrs.org/osx/karabiner/document.html.en#commandlineinterface
 
-dotfile_prefs="$HOME/.dotfiles/osx_prefs"
+dotfile_prefs="$HOME/.dotfiles/macos_prefs"
 karabiner='/Applications/Karabiner.app/Contents/Library/bin/karabiner'
 active_profile=$($karabiner selected)
 profiles=("Macbook" "External" "Disabled")

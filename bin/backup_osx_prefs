@@ -13,7 +13,7 @@ function backup_pref() {
   fi
 }
 
-DOTFILE_PREFS="$HOME/.dotfiles/osx_prefs"
+DOTFILE_PREFS="$HOME/.dotfiles/macos_prefs"
 
 iterm2_src="$HOME/Library/Preferences/com.googlecode.iterm2.plist"
 iterm2_dest="$DOTFILE_PREFS/com.googlecode.iterm2.plist"
