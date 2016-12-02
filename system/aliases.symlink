@@ -89,6 +89,7 @@ alias e.="open ." # Mac OSX
 alias pub='echo $HOME/.ssh/id_rsa.pub; cat $HOME/.ssh/id_rsa.pub'
 alias bash="exec bash -l"
 alias zsh="exec zsh -l"
+alias http="python -m SimpleHTTPServer $1"
 
 #============================
 # Other functions
