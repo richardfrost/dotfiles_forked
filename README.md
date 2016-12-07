@@ -1,3 +1,13 @@
+# Richard's dotfiles
+## System settings
+Go to System Preferences > Keyboard > Keyboard Shortcuts > Mission Control and change the settings for "Move left a space" and "Move right a space" or disable them completely.
+
+Keyboard -> Key Repeat: 8/8, Delay: 4/6
+
+### Todo:
+(Karabiner: Delay: 350ms, Key Repeat: 25ms)
+Fix Home/End
+
 # holman does dotfiles
 
 Your dotfiles are how you personalize your system. These are mine.

@@ -31,8 +31,6 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 'body':
-  'alt-shift-up': 'editor:move-line-up'
-  'alt-shift-down': 'editor:move-line-down'
   'ctrl-shift-I': 'window:toggle-invisibles'
   'f9': 'sort-lines:sort' # Need to install sort-lines: apm install sort-lines
   # Cycle through tabs in display order instead of MRU
@@ -41,6 +39,10 @@
   'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-shift-tab ^ctrl': 'unset!'
   # End Cycle through tabs
+
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-shift-up': 'editor:move-line-up'
+  'ctrl-shift-down': 'editor:move-line-down'
 
 '.platform-darwin':
   'alt-pageup': 'core:page-up'
