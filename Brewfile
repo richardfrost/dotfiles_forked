@@ -53,3 +53,4 @@ cask 'scroll-reverser' # Alternate scrolling per input device
 cask 'slack'           # Instant messenger
 cask 'steam'           # Game distribution platform
 cask 'vlc'             # Media player
+cask 'broomstick'      # Hide menubar items
