@@ -44,6 +44,10 @@
   'ctrl-shift-up': 'editor:move-line-up'
   'ctrl-shift-down': 'editor:move-line-down'
 
+'.editor':
+  'ctrl-home': 'core:move-to-top'
+  'ctrl-end': 'core:move-to-bottom'
+
 '.platform-darwin':
   'alt-pageup': 'core:page-up'
   'alt-pagedown': 'core:page-down'
@@ -66,6 +70,8 @@
   'ctrl-shift-delete': 'editor:delete-to-end-of-line'
   'ctrl-shift-M': 'markdown-preview:toggle'
   'ctrl-shift-P': 'command-palette:toggle'
+  'cmd-z': 'core:undo'
+  'cmd-y': 'core:redo'
 
 '.platform-darwin .find-and-replace':
   'cmd-enter': 'find-and-replace:find-all'
