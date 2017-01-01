@@ -48,9 +48,9 @@ cask 'firefox'         # Web browser
 cask 'google-chrome'   # Web browser
 cask 'handbrake'       # Video encoder
 cask 'iterm2'          # Terminal replacement
-cask 'karabiner'       # Key modification tool
-cask 'scroll-reverser' # Alternate scrolling per input device
 cask 'slack'           # Instant messenger
 cask 'steam'           # Game distribution platform
 cask 'vlc'             # Media player
 cask 'broomstick'      # Hide menubar items
+# cask 'karabiner'       # Key modification tool
+# cask 'scroll-reverser' # Alternate scrolling per input device
