@@ -68,5 +68,8 @@ _c() {
 }
 complete -F _c c
 
+# load ssh agent
+ssh-add -K ~/.ssh/id_rsa 2>/dev/null
+
 # Import common aliases
 . ~/.aliases

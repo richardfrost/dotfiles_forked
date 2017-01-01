@@ -137,6 +137,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# load ssh agent
+ssh-add -K ~/.ssh/id_rsa 2>/dev/null
+
 # 'rbenv init -'
 eval "$(rbenv init -)"
 
