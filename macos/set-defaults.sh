@@ -10,11 +10,12 @@
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-# Set a really fast key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 1
-
+# 1 int = 15ms
 # Set initial key repeat rate.
-defaults write -g InitialKeyRepeat -int 10
+defaults write -g InitialKeyRepeat -int 23
+
+# Set a faster key repeat.
+defaults write NSGlobalDomain KeyRepeat -int 2
 
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
@@ -48,3 +49,12 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Hide the notification faster
 defaults write com.apple.notificationcenterui bannerTime 2
+
+# Speed up animations
+defaults write com.apple.Dock autohide-delay -float 0
+
+# Enable text selection for Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+
+# Show system info on login screen by clicking clock
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
