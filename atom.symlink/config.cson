@@ -23,7 +23,7 @@
       ".DS_Store"
       "thumbs.db"
     ]
-    telemetryConsent: "limited"
+    telemetryConsent: "no"
     themes: [
       "atom-material-ui"
       "one-dark-syntax"
@@ -37,12 +37,17 @@
       tab: "-"
     scrollPastEnd: true
     showIndentGuide: true
+    softWrapAtPreferredLineLength: false
   "exception-reporting":
     userId: "3a02b761-61a3-b87d-8e92-617d38efeb84"
   "file-icons": {}
   "git-plus":
     general:
       _analyticsUserId: "bb9905bc-ab93-4d6b-abb0-0491ce246766"
+  "go-plus":
+    panelDisplayMode: "closed"
+  "linter-eslint":
+    useGlobalEslint: true
   "linter-puppet-lint":
     oldVersion: false
   "linter-shellcheck":
@@ -53,6 +58,8 @@
       "split-diffDecorationsZIndex": 0
   pigments:
     markerType: "square-dot"
+  "release-notes":
+    viewedVersion: "0.89.0"
   "spell-check":
     grammars: [
       "text.plain"
