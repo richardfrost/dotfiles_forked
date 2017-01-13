@@ -20,26 +20,18 @@
   // background-color: whitesmoke;
 }
 
-// style the background and foreground colors on the atom-text-editor-element itself
-atom-text-editor {
-  // color: white;
-  // background-color: hsl(180, 24%, 12%);
-}
-
 // To style other content in the text editor's shadow DOM, use the ::shadow expression
-atom-text-editor::shadow .cursor {
-  // border-color: red;
-}
-
-atom-text-editor::shadow .wrap-guide {
-  opacity: .05; //barely visible
-  background-color: cyan;
-}
+// atom-text-editor.editor .cursor {
+//   border-color: red;
+// }
 
 // Make the invisibles less visible
-atom-text-editor::shadow {
-  .invisible-character {
-    color: cyan;
-    opacity: 0.15;
-  }
+atom-text-editor.editor .invisible-character {
+  color: cyan;
+  opacity: 0.15;
+}
+// Make the wrap-guide line less distratcting
+atom-text-editor.editor .wrap-guide {
+  opacity: .05; //barely visible
+  background-color: cyan;
 }
