@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'homebrew/dupes'
 
 brew 'ack'
 brew 'ansible'
@@ -11,6 +12,7 @@ brew 'gdm'
 brew 'gnupg'
 brew 'go'
 brew 'grc'
+brew 'homebrew/dupes/srm'
 brew 'htop'
 brew 'imagemagick'
 brew 'jp2a'
