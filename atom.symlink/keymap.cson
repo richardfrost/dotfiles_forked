@@ -31,6 +31,10 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 'body':
+  'ctrl-=': 'window:increase-font-size'
+  'ctrl-+': 'window:increase-font-size'
+  'ctrl--': 'window:decrease-font-size'
+  'ctrl-0': 'reset-font-size'
   'ctrl-shift-I': 'window:toggle-invisibles'
   'f9': 'sort-lines:sort' # Need to install sort-lines: apm install sort-lines
   # Cycle through tabs in display order instead of MRU
