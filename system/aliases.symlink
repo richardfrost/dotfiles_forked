@@ -81,19 +81,21 @@ function provision_vms { ~/code/puppet/bin/csv_to_provision provision --site="$1
 # Richard's Aliases
 #============================
 # Applications/Misc
-alias aliases='cat "$HOME/.aliases"'
-alias a.="atom ."
-alias dbin='ls $HOME/.dotfiles/bin'
-alias dotfiles="cd ~/.dotfiles"
-alias e.="open ." # Mac OSX
-alias pub='echo $HOME/.ssh/id_rsa.pub; cat $HOME/.ssh/id_rsa.pub'
-alias bash="exec bash -l"
-alias zsh="exec zsh -l"
-alias http="python -m SimpleHTTPServer $1"
+alias aliases='cat "$HOME"/.aliases'
+alias a.='atom .'
+alias bash='exec bash -l'
+alias dbin='ls "$HOME"/.dotfiles/bin'
+alias dotfiles='cd "$HOME"/.dotfiles'
+alias e.='open .' # macOS
+alias sshpub='head "$HOME"/.ssh/*.pub'
+alias zsh='exec zsh -l'
 
 #============================
 # Other functions
 #============================
+# Run a simple python http server
+function httpd { python -m SimpleHTTPServer "$1"; }
+
 # Generate Password
 # alias pwgen="date | md5"
 function pwgen { if [[ $1 ]]; then length=$1; else length=32; fi; date +%s | sha256sum | base64 | head -c $length; echo; }
