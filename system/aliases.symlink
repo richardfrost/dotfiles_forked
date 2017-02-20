@@ -87,6 +87,7 @@ alias bash='exec bash -l'
 alias dbin='ls "$HOME"/.dotfiles/bin'
 alias dotfiles='cd "$HOME"/.dotfiles'
 alias e.='open .' # macOS
+alias sshfp='ssh_fingerprints'
 alias sshpub='head "$HOME"/.ssh/*.pub'
 alias zsh='exec zsh -l'
 
@@ -99,3 +100,9 @@ function httpd { python -m SimpleHTTPServer "$1"; }
 # Generate Password
 # alias pwgen="date | md5"
 function pwgen { if [[ $1 ]]; then length=$1; else length=32; fi; date +%s | sha256sum | base64 | head -c $length; echo; }
+
+function ssh_fingerprints {
+  find "$HOME/.ssh" -name "*.pub" -print0 \
+    | xargs -0 -I file sh -c \
+    'echo --- file ---; ssh-keygen -lf file; ssh-keygen -E md5 -lf file; echo'
+}
