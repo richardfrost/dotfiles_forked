@@ -94,6 +94,13 @@ alias zsh='exec zsh -l'
 #============================
 # Other functions
 #============================
+# List all local branches and their last revision date in order
+function git_branch_revisions {
+  for k in $(git branch | sed s/^..//); \
+    do echo -e "$(git log -1 --pretty=format:'%Cgreen%ci %Cblue%cr%Creset' $k --)" \
+    \\t"$k";done | sort
+}
+
 # Run a simple python http server
 function httpd { python -m SimpleHTTPServer "$1"; }
 
