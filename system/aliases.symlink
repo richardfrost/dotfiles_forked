@@ -89,6 +89,7 @@ alias bash='exec bash -l'
 alias dbin='ls "$HOME"/.dotfiles/bin'
 alias dotfiles='cd "$HOME"/.dotfiles'
 alias e.='open .' # macOS
+alias myip='curl ifconfig.co'
 alias sshfp='ssh_fingerprints'
 alias sshpub='head "$HOME"/.ssh/*.pub'
 alias zsh='exec zsh -l'
