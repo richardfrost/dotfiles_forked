@@ -44,15 +44,22 @@ brew 'zsh'
 cask 'appcleaner'      # Application cleanup
 cask 'atom'            # Text editor
 cask 'bettertouchtool' # Key and gesture customization
-cask 'ccleaner'         # Tempfile cleaner
+cask 'ccleaner'        # Tempfile cleaner
 cask 'filezilla'       # File transfer
 cask 'firefox'         # Web browser
 cask 'google-chrome'   # Web browser
 cask 'handbrake'       # Video encoder
 cask 'iterm2'          # Terminal replacement
+cask 'pgadmin4'        # PostgreSQL admin tool
 cask 'slack'           # Instant messenger
 cask 'steam'           # Game distribution platform
 cask 'vlc'             # Media player
 cask 'broomstick'      # Hide menubar items
 # cask 'karabiner'       # Key modification tool
 # cask 'scroll-reverser' # Alternate scrolling per input device
+
+# PostgreSQL setup
+# mkdir -p ~/Library/LaunchAgents
+# ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+# launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+# /usr/local/Cellar/postgresql/9.2.4/bin/createuser -s postgres
