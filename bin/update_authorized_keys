@@ -13,12 +13,7 @@ if [[ -f "$HOME/.remote_authorized_keys" ]]; then
       echo "Error! Failed to download file: $remote_authorized_keys"
     else
       current_md5="$(md5sum "$HOME/.ssh/authorized_keys" | awk '{print $1}')"
-      # echo $current_md5
-      # cat "$HOME/.ssh/authorized_keys"
       new_md5="$(echo "$downloaded" | md5sum | awk '{print $1}')"
-      # echo $new_md5
-      # echo "$downloaded"
-
       if [[ "$current_md5" != "$new_md5" ]]; then
         cp "$HOME/.ssh/authorized_keys" "$HOME/.ssh/authorized_keys.bak"
         echo "$downloaded" > "$HOME/.ssh/authorized_keys"
