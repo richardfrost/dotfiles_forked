@@ -11,6 +11,7 @@ atom.symlink/blob-store
 atom.symlink/recovery
 
 git/gitconfig.local.symlink
+vim/vim.symlink/bundle
 
 # OSX
 *.DS_Store
