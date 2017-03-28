@@ -6,7 +6,7 @@ export HISTCONTROL=ignoredups:ignorespace
 
 if [ "$(uname -s)" == "Darwin" ]
 then
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  PATH="$HOME/.dotfiles/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
 # PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \ "$(history 1)" >> ~/.bash_permanent_history'
